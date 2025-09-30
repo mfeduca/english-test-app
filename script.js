@@ -4,7 +4,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDSR4F_neduMfzsz4w-LUjuCuCBGIcX0b4",
   authDomain: "teste-de-ingles-e4285.firebaseapp.com",
   projectId: "teste-de-ingles-e4285",
-  storageBucket: "teste-de-ingles-e4285.firebasestorage.app",
+  storageBucket: "teste-de-ingles-e4285.appspot.com",
   messagingSenderId: "866272890691",
   appId: "1:866272890691:web:8f1a54321d72efb8e569f6"
 };
@@ -55,13 +55,15 @@ const questions = [
     { type: 'text', question: 'Which sentence is correct?', options: ['Mato Grosso do Sul is larger that São Paulo.', 'Mato Grosso do Sul is more large than São Paulo.', 'Mato Grosso do Sul is larger than São Paulo.', 'Mato Grosso do Sul is largest São Paulo.'], correct: 'Mato Grosso do Sul is larger than São Paulo.' },
     { type: 'text', question: 'Choose the correct connector: "Brazil exports beef, ______ it also exports coffee."', options: ['so', 'but', 'and', 'because'], correct: 'and' },
     { type: 'text', question: 'Which sentence uses the passive voice correctly?', options: ['Soybeans are exported to China.', 'China exports are soybeans.', 'Soybeans exporting to China.', 'Soybeans is export China.'], correct: 'Soybeans are exported to China.' },
-    { type: 'audio', audioSrc: 'ttsreader_17.mp3', question: 'Listen to the audio and choose the best answer. The speaker is mainly describing:', options: ['How a scientific discovery was made despite initial failure.', 'A funny story about an experiment.', 'How to conduct a successful experiment.', 'The history of a famous scientist.'], correct: 'How a scientific discovery wasmade despite initial failure.' }, // Simplified based on audio content
+    // --- QUESTION 17 CORRECTED AS REQUESTED ---
+    { type: 'audio', audioSrc: 'ttsreader_17.mp3', question: 'Listen to the audio and choose the best answer.', options: ['The speaker is discussing environmental issues.', 'The speaker is telling a funy story.', 'The speaker is explaining a recipe.', 'The speaker is describing a sport.'], correct: 'The speaker is discussing environmental issues.' },
+    // --- END OF CORRECTION ---
     // Part 4 – Upper-Intermediate (B2–C1)
     { type: 'text', question: 'Choose the correct word to complete the sentence: "Global demand for food is ______ rapidly."', options: ['increase', 'increases', 'increasing', 'increased'], correct: 'increasing' },
     { type: 'text', question: 'Which is the best summary of this idea? "Mato Grosso do Sul improves logistics to reduce export costs."', options: ['Logistics make food expensive.', 'Better logistics reduce costs.', 'Logistics are not important.', 'Mato Grosso do Sul stops exports.'], correct: 'Better logistics reduce costs.' },
     { type: 'text', question: 'Which option is the most formal?', options: ['We wanna sell more soybeans.', 'We would like to expand soybean exports.', 'We going to sell soybeans.', 'We sell soybeans fast.'], correct: 'We would like to expand soybean exports.' },
-    { type:- 'text', question: 'Complete the sentence with the best modal verb: "International companies ______ invest in sustainable projects."', options: ['must', 'can’t', 'doesn’t', 'is'], correct: 'must' },
-    { type: 'text', question: 'Choose the best sentence:', options: ['Innovation is essential, however it creates opportunities for growth.', 'Innovation is essential; however, it creates opportunities for growth.', 'Innovation essential, however creates opportunities.', 'Innovation essential but growth.'], correct: 'Innovation is essential; however, it creates opportunities for growth.' }, // Note: Corrected grammar for a better question.
+    { type: 'text', question: 'Complete the sentence with the best modal verb: "International companies ______ invest in sustainable projects."', options: ['must', 'can’t', 'doesn’t', 'is'], correct: 'must' },
+    { type: 'text', question: 'Choose the best sentence:', options: ['Innovation is essential, however it creates opportunities for growth.', 'Innovation is essential; however, it creates opportunities for growth.', 'Innovation essential, however creates opportunities.', 'Innovation essential but growth.'], correct: 'Innovation is essential; however, it creates opportunities for growth.' },
     { type: 'audio', audioSrc: 'ttsreader_23.mp3', question: "Listen to the audio. What was said about the committee's decision?", options: ['It was expected.', 'It was unexpected.', 'It was ignored.', 'It was postponed.'], correct: 'It was unexpected.' }
 ];
 
@@ -180,6 +182,5 @@ function saveResultsToFirebase(result) {
     })
     .catch((error) => {
         console.error("Error adding document: ", error);
-        // Optionally, display an error message to the user
     });
 }
