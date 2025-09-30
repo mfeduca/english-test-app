@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Proficiency Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <h1>English Proficiency Test</h1>
+            <p>Please enter your details to begin the test.</p>
+            <form id="user-form">
+                <input type="text" id="first-name" placeholder="First Name" required>
+                <input type="text" id="last-name" placeholder="Last Name" required>
+                <button type="submit">Start Test</button>
+            </form>
+        </div>
+
+        <div id="test-screen" class="screen">
+            <div id="progress-bar">
+                <div id="progress-bar-full"></div>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="audio-player-container"></div>
+            <div id="options-container" class="options">
+                </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2>Test Completed!</h2>
+            <p>Thank you, <span id="user-name-result"></span>.</p>
+            <p>Your estimated proficiency level is:</p>
+            <h1 id="result-level"></h1>
+            <p class="feedback-message">Your result has been saved. You may now close this window.</p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
